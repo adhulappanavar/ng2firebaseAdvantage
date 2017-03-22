@@ -1,0 +1,17 @@
+<div *ngIf="patient">
+  <a [routerLink]="['/patientlist']">Go Back</a>
+  <br>
+  <h2 class="page-header">{{patient.title}} <small>{{patient.city}}</small></h2>
+  <div class="row">
+    <div class="col-md-8">
+      <ul class="list-group">
+        <li class="list-group-item">Owner: {{patient.owner}}</li>
+        <li class="list-group-item">Bedrooms: {{patient.bedrooms}}</li>
+        <li class="list-group-item">Type: {{patient.type}}</li>
+        <li class="list-group-item">Price: {{patient.price}}</li>
+      </ul>
+    </div>
+    <a class="btn btn-default" [routerLink]="['/edit-patient/'+patient.$key]">Edit</a>
+    <a (click)="onDeleteClick()" class="btn btn-danger">Delete</a>
+  </div>
+</div>

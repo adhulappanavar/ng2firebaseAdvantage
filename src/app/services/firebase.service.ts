@@ -6,11 +6,13 @@ import * as firebase from 'firebase';
 export class FirebaseService {
   listings: FirebaseListObservable<any[]>;
   listing: FirebaseObjectObservable<any>;
-  folder: any;
+
+  patientlist: FirebaseListObservable<any[]>;
+  patientdetail: FirebaseObjectObservable<any>;
 
   constructor(private af: AngularFire) {
-    this.folder = 'listingimages';
-    this.listings = this.af.database.list('/listings') as FirebaseListObservable<Listing[]>
+    this.listings = this.af.database.list('/listings') as FirebaseListObservable<Listing[]>;
+    this.patientlist = this.af.database.list('/patientlist') as FirebaseListObservable<Patient[]>;
   }
 
   getListings(){
@@ -23,18 +25,10 @@ export class FirebaseService {
   }
 
   addListing(listing){
-    // Create root ref
-    let storageRef = firebase.storage().ref();
-    for(let selectedFile of [(<HTMLInputElement>document.getElementById('image')).files[0]]){
-      let path = `/${this.folder}/${selectedFile.name}`;
-      let iRef = storageRef.child(path);
-      iRef.put(selectedFile).then((snapshot) => {
-        listing.image = selectedFile.name;
-        listing.path = path;
         return this.listings.push(listing);
-      });
+      
     }
-  }
+  
 
   updateListing(id, listing){
     return this.listings.update(id, listing);
@@ -44,9 +38,45 @@ export class FirebaseService {
     return this.listings.remove(id);
   }
 
+  /* Patients ****/
+
+getPatientList(){
+    return this.patientlist;
+  }
+
+  getPatientDetail(id){
+    this.patientdetail = this.af.database.object('/patientlist/'+id) as FirebaseObjectObservable<Listing>
+    return this.patientdetail;
+  }
+
+  addPatientDetail(patientdetail){
+        return this.patientlist.push(patientdetail);
+      
+    }
+  
+
+  updatePateintDetail(id, patientdetail){
+    return this.patientlist.update(id, patientdetail);
+  }
+
+  deletePatientDetail(id){
+    return this.listings.remove(id);
+  }
+
+
 }
 
 interface Listing{
+  $key?:string;
+  title?:string;
+  type?:string;
+  image?:string;
+  city?:string;
+  owner?:string;
+  bedrooms?:string;
+}
+
+interface Patient{
   $key?:string;
   title?:string;
   type?:string;

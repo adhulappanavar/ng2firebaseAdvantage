@@ -9,11 +9,17 @@ import {FlashMessagesModule} from 'angular2-flash-messages';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { ListingsComponent } from './components/listingComponent/listings/listings.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+
+import { ListingsComponent } from './components/listingComponent/listings/listings.component';
 import { ListingComponent } from './components/listingComponent/listing/listing.component';
 import { AddListingComponent } from './components/listingComponent/add-listing/add-listing.component';
 import { EditListingComponent } from './components/listingComponent/edit-listing/edit-listing.component';
+
+import { PatientlistComponent } from './components/patientComponent/patientlist/patientlist.component';
+import { PatientDetailComponent } from './components/patientComponent/patientdetail/patientdetail.component';
+import { AddPatientComponent } from './components/patientComponent/add-patient/add-patient.component';
+import { EditPatientComponent } from './components/patientComponent/edit-patient/edit-patient.component';
 
 /*
 export const firebaseConfig = {
@@ -42,18 +48,28 @@ const appRoutes: Routes = [
   {path: 'listings', component:ListingsComponent},
   {path:'listing/:id', component:ListingComponent},
   {path: 'add-listing', component:AddListingComponent},
-  {path:'edit-listing/:id', component:EditListingComponent}
+  {path:'edit-listing/:id', component:EditListingComponent},
+  {path: 'patientlist', component:PatientlistComponent},
+  {path:'patientdetail/:id', component:PatientDetailComponent},
+  {path: 'add-patient', component:AddPatientComponent},
+  {path:'edit-patient/:id', component:EditPatientComponent}
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ListingsComponent,
     NavbarComponent,
+
+    ListingsComponent,
     ListingComponent,
     AddListingComponent,
-    EditListingComponent
+    EditListingComponent,
+    /**  Patient Component */
+    PatientlistComponent,
+    PatientDetailComponent,
+    AddPatientComponent,
+    EditPatientComponent    
   ],
   imports: [
     BrowserModule,
