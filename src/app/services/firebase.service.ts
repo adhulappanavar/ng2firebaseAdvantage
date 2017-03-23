@@ -50,7 +50,15 @@ getPatientList(){
   }
 
   addPatientDetail(patientdetail){
-        return this.patientlist.push(patientdetail);
+    // Get a key for a new Post.
+      var newPatientKey = firebase.database().ref().child('patientlist').push().key;
+    // Write the new post's data simultaneously in the posts list and the user's post list.
+      var updates = {};
+      updates['/patientlist/' + newPatientKey] = patientdetail;
+      updates['/listings/'  + newPatientKey] = patientdetail;
+
+  return firebase.database().ref().update(updates);
+        //return this.patientlist.push(patientdetail);
       
     }
   
