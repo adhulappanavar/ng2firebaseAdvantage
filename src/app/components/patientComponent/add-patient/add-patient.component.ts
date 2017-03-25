@@ -8,13 +8,12 @@ import {Router} from '@angular/router';
   styleUrls: ['./add-patient.component.css']
 })
 export class AddPatientComponent implements OnInit {
-  title:any;
-  owner:any;
-  city:any;
-  bedrooms:any;
-  price:any;
-  type:any;
-  image:any;
+  p_name:any;
+  p_guardian:any;
+  p_city:any;
+  p_age:any;
+  p_initial_deposit:any;
+  p_roomtype:any;
 
   constructor(
     private firebaseService:FirebaseService,
@@ -26,14 +25,15 @@ export class AddPatientComponent implements OnInit {
 
   onAddSubmit(){
     let patient = {
-      title: this.title,
-      city: this.city,
-      owner: this.owner,
-      bedrooms:this.bedrooms,
-      price: this.price,
-      type: this.type
+      p_name: this.p_name,
+      p_city: this.p_city,
+      p_guardian: this.p_guardian,
+      p_age:this.p_age,
+      p_initial_deposit: this.p_initial_deposit,
+      p_roomtype: this.p_roomtype
     }
 
+    console.log("Calling firebaseService.addPatientDetail with patinet ", patient);
     this.firebaseService.addPatientDetail(patient);
 
     this.router.navigate(['patientlist']);

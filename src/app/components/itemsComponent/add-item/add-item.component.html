@@ -1,0 +1,14 @@
+<a [routerLink]="['/itemlist']">Back</a>
+<br />
+<h2 class="page-header">Add Item</h2>
+<form (submit)="onAddSubmit()">
+  <div class="form-group">
+    <label>Item Name</label>
+    <input class="form-control" type="text" [(ngModel)]="i_name" name="i_name" required>
+  </div>
+  <div class="form-group">
+    <label>Unit Price</label>
+    <input class="form-control" type="text" [(ngModel)]="i_unitprice" name="i_unitprice" required>
+  </div>
+  <input type="submit" value="submit" class="btn btn-success">
+</form>

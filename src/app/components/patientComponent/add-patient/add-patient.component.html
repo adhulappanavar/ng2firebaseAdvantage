@@ -3,32 +3,32 @@
 <h2 class="page-header">Add Patient</h2>
 <form (submit)="onAddSubmit()">
   <div class="form-group">
-    <label>Title</label>
-    <input class="form-control" type="text" [(ngModel)]="title" name="title" required>
+    <label>Patient Name</label>
+    <input class="form-control" type="text" [(ngModel)]="p_name" name="p_name" required>
   </div>
   <div class="form-group">
     <label>City</label>
-    <input class="form-control" type="text" [(ngModel)]="city" name="city" required>
+    <input class="form-control" type="text" [(ngModel)]="p_city" name="p_city" required>
   </div>
   <div class="form-group">
-    <label>Owner</label>
-    <input class="form-control" type="text" [(ngModel)]="owner" name="owner" required>
+    <label>Guardian</label>
+    <input class="form-control" type="text" [(ngModel)]="p_guardian" name="p_guardian" required>
   </div>
   <div class="form-group">
-    <label>Bedrooms</label>
-    <input class="form-control" type="number" [(ngModel)]="bedrooms" name="bedrooms" required>
+    <label>Age</label>
+    <input class="form-control" type="number" [(ngModel)]="p_age" name="p_age" required>
   </div>
   <div class="form-group">
-    <label>Type</label>
-    <select class="form-control" type="text" [(ngModel)]="type" name="type" required>
-      <option value="Estate">Estate</option>
-      <option value="Condo">Condo</option>
-      <option value="Apartment">Apartment</option>
+    <label>Room Type</label>
+    <select class="form-control" type="text" [(ngModel)]="p_roomtype" name="p_roomtype" required>
+      <option value="Single">Single</option>
+      <option value="Shared">Shared</option>
+      <option value="General">General</option>
     </select>
   </div>
   <div class="form-group">
-    <label>Price</label>
-    <input class="form-control" type="text" [(ngModel)]="price" name="price" required>
+    <label>Initial Deposit</label>
+    <input class="form-control" type="text" [(ngModel)]="p_initial_deposit" name="p_initial_deposit" required>
   </div>
   <input type="submit" value="submit" class="btn btn-success">
 </form>

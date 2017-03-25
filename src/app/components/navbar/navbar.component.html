@@ -15,15 +15,6 @@
             <li><a [routerLink]="['/']">Home</a></li>
                      
             <li *ngIf="(af.auth | async)" class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">PropListing
-                <span class="caret"></span></a>
-                 <ul class="dropdown-menu">
-                    <li *ngIf="(af.auth | async)"><a [routerLink]="['/listings']">Listings</a></li>
-                    <li *ngIf="(af.auth | async)"><a [routerLink]="['/add-listing']">Add Listing</a></li>
-                  </ul>
-            </li>
-
-            <li *ngIf="(af.auth | async)" class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Patients
                 <span class="caret"></span></a>
                  <ul class="dropdown-menu">
@@ -32,6 +23,16 @@
                   </ul>
             </li>
             
+            <li *ngIf="(af.auth | async)" class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Items
+                <span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+                    <li *ngIf="(af.auth | async)"><a [routerLink]="['/itemlist']">Item List</a></li>
+                    <li *ngIf="(af.auth | async)"><a [routerLink]="['/add-item']">Add Item</a></li>
+                  </ul>
+            </li>
+
+
           </ul>
 
 

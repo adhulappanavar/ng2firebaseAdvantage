@@ -1,0 +1,14 @@
+<div *ngIf="item">
+  <a [routerLink]="['/itemlist']">Go Back</a>
+  <br>
+  <h2 class="page-header">{{item.i_name}} <small>{{item.i_city}}</small></h2>
+  <div class="row">
+    <div class="col-md-8">
+      <ul class="list-group">
+        <li class="list-group-item">Initial Deposit: {{item.i_unitprice}}</li>
+      </ul>
+    </div>
+    <a class="btn btn-default" [routerLink]="['/edit-item/'+item.$key]">Edit</a>
+    <a (click)="onDeleteClick()" class="btn btn-danger">Delete</a>
+  </div>
+</div>

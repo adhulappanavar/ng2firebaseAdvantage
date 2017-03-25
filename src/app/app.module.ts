@@ -16,10 +16,20 @@ import { ListingComponent } from './components/listingComponent/listing/listing.
 import { AddListingComponent } from './components/listingComponent/add-listing/add-listing.component';
 import { EditListingComponent } from './components/listingComponent/edit-listing/edit-listing.component';
 
+/* Patient */
 import { PatientlistComponent } from './components/patientComponent/patientlist/patientlist.component';
 import { PatientDetailComponent } from './components/patientComponent/patientdetail/patientdetail.component';
 import { AddPatientComponent } from './components/patientComponent/add-patient/add-patient.component';
 import { EditPatientComponent } from './components/patientComponent/edit-patient/edit-patient.component';
+
+
+/* Items */
+import { ItemlistComponent } from './components/itemsComponent/itemlist/itemlist.component';
+import { ItemDetailComponent } from './components/itemsComponent/itemdetail/itemdetail.component';
+import { AddItemComponent } from './components/itemsComponent/add-item/add-item.component';
+import { EditItemComponent } from './components/itemsComponent/edit-item/edit-item.component';
+
+import { AddItem2PatientComponent } from './components/item2patient/additem2patient/additem2patient.component';
 
 /*
 export const firebaseConfig = {
@@ -49,10 +59,19 @@ const appRoutes: Routes = [
   {path:'listing/:id', component:ListingComponent},
   {path: 'add-listing', component:AddListingComponent},
   {path:'edit-listing/:id', component:EditListingComponent},
+  /* Patient */
   {path: 'patientlist', component:PatientlistComponent},
   {path:'patientdetail/:id', component:PatientDetailComponent},
   {path: 'add-patient', component:AddPatientComponent},
-  {path:'edit-patient/:id', component:EditPatientComponent}
+  {path:'edit-patient/:id', component:EditPatientComponent},
+   /* Items */
+  {path: 'itemlist', component:ItemlistComponent},
+  {path:'itemdetail/:id', component:ItemDetailComponent},
+  {path: 'add-item', component:AddItemComponent},
+  {path:'edit-item/:id', component:EditItemComponent},
+
+     /* Items */
+  {path: 'additems2patient/:id', component:AddItem2PatientComponent}
 ]
 
 @NgModule({
@@ -69,7 +88,14 @@ const appRoutes: Routes = [
     PatientlistComponent,
     PatientDetailComponent,
     AddPatientComponent,
-    EditPatientComponent    
+    EditPatientComponent,
+    /**  Patient Component */
+    ItemlistComponent,
+    ItemDetailComponent,
+    AddItemComponent,
+    EditItemComponent,
+
+    AddItem2PatientComponent
   ],
   imports: [
     BrowserModule,

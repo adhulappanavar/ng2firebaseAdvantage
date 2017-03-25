@@ -1,5 +1,6 @@
 <ul class="list-group">
   <li class="list-group-item" *ngFor="let patient of patients">
-    <a [routerLink]="['/patientdetail/'+patient.$key]">{{patient.title}}</a>
+    <a [routerLink]="['/patientdetail/'+patient.$key]">{{patient.p_name}}</a>
+    <a class="btn btn-default" [routerLink]="['/additems2patient/'+patient.$key]" >Add Items</a>
   </li>
 </ul>
